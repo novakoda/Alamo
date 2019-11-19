@@ -1,0 +1,11 @@
+support_jdam_available = false;
+JdamInUse = false;
+support_mortar_available = false;
+MortInUse = false;
+support_arty_available = false;
+ArtyInUse = false;
+support_uav_recon_available = false;
+UavInUse = false;
+support_veh_refit_available = false;
+support_cluster_available = false;
+ClusterInUse = false;

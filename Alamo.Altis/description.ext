@@ -1,0 +1,159 @@
+#include "settings\base_defines.hpp"
+#include "settings\params.hpp"
+#include "settings\hud.hpp"
+#include "sounds\sounds.hpp"
+#include "support\support.hpp"
+
+class Header
+	{
+		gameType = Survive;								// Unknown, COOP, DM, TDM, CTF, SC, CTI, RPG, Sandbox, Seize, Defend.
+		minPlayers = 1;									// Min # of players the MISSION supports
+		maxPlayers = 5;								// Max # of players the MISSION supports, not server slots. Make sure # is greater than server slots.
+	};
+
+//------------------------- Admin
+
+enableDebugConsole[] = {"76561198016676868"};
+allowFunctionsLog = 0; 									// Log functions to .rpt. disabled with 0
+allowFunctionsRecompile = 0;
+
+//------------------------- Misc
+
+saving = 0;
+respawnDelay = 5;
+//disableChannels[] = {{0,false,true},{1,false,true},{2,false,true},{6,true,true}};									// 0 = Global, 1 = Side, 2 = Command, 3 = Group, 4 = Vehicle, 5 = Direct, 6 = System. Admin/server/BattlEye can still use Global.
+disabledAI = 1;											// No AI in playable units
+aiKills = 0; 											// disable scorelist for AI players
+enableItemsDropping = 0; 								// disabled with 0
+joinUnassigned = 1;										// 0 = players forced into role on join
+showUAVFeed = 1;										// Enables/Disables the UAV Feed. Zeus-related.
+forceRotorLibSimulation = 0;
+respawnOnStart = 0;
+
+corpseManagerMode = 1; //Type of removed bodies: 0 - none, 1 - all, 2 - only respawnable, 3 - only non-respawnable
+corpseLimit = 5; //Max number of bodies which can be available at the same time. When exceeded, start deleting immediately.
+corpseRemovalMinTime = 60; //Minimal time in seconds a body stays in the scene (can't be removed sooner).
+corpseRemovalMaxTime = 200; //Maximal time in seconds after which a dead body is removed (can't stay longer)
+
+wreckManagerMode = 1; //Type of removed wrecks: 0 - none, 1 - all, 2 - only respawnable, 3 - only non-respawnable
+wreckLimit = 3; //Max number of wrecks which can be available at the same time. When exceeded, start deleting immediately.
+wreckRemovalMinTime = 60; //Minimal time in seconds a wreck stays in the scene (can't be removed sooner).
+wreckRemovalMaxTime = 160; //Maximal time in seconds after which a wreck is removed (can't stay longer)
+
+loadScreen = "images\loadscreen.paa"
+
+class CfgNotifications
+{
+		class WaveInbound
+	{
+		title = "ENEMIES INCOMING";
+		iconPicture = "\a3\data_f_tacops\images\achtoseasonedwarfighter.jpg";
+		description = "<t color='#ffff33'>Enemies Incoming!<br />Wave %1</t>";
+		color[] = {1,0.5,0.5,1};
+		sound = "";
+		duration = 5;
+		priority = 0;
+	};
+
+		class WaveFailed
+	{
+		title = "WAVE FAILED";
+		iconPicture = "\a3\data_f_orange\images\achorangeshowcaselow.jpg";
+		description = "<t color='#ffff33'>All friendly units are dead.<br />Try again!</t>";
+		color[] = {1,0.5,0.5,1};
+		sound = "";
+		duration = 5;
+		priority = 0;
+	};
+
+		class WaveOverAlert
+	{
+		title = "WAVE COMPLETE";
+		iconPicture = "\a3\data_f_tacops\images\achtoforwardobserver.jpg";
+		description = "<t color='#ffff33'>Wave %1 Complete!</t>";
+		color[] = {0.7,1,0.7,1};
+		sound = "";
+		duration = 5;
+		priority = 0;
+	};
+
+		class RainAlert
+	{
+		title = "STORM APPROACHING";
+		iconPicture = "\a3\modules_f_curator\data\portraitweather_ca.paa";
+		description = "Survive through the storm";
+		color[] = {0.3,0.3,1,1};
+		sound = "";
+		duration = 5;
+		priority = 0;
+	};
+
+		class RainOverAlert
+	{
+		title = "STORM OVER";
+		iconPicture = "\a3\ui_f_curator\data\cfgcurator\laser_ca.paa";
+		description = "You survived the storm";
+		color[] = {1,1,0.3,1};
+		sound = "";
+		duration = 5;
+		priority = 0;
+	};
+
+	class NightAlert
+	{
+		title = "NIGHT TIME";
+		iconPicture = "\a3\modules_f_curator\data\portraitskiptime_ca.paa";
+		description = "Survive through the night";
+		color[] = {1,1,1,1};
+		sound = "";
+		duration = 5;
+		priority = 0;
+	};
+
+	class NightOverAlert
+	{
+		title = "Morning";
+		iconPicture = "\a3\modules_f_curator\data\portraitskiptime_ca.paa";
+		description = "You Survived the night";
+		color[] = {1,1,1,1};
+		sound = "";
+		duration = 5;
+		priority = 0;
+	};
+
+	class info
+	{
+		title = "%1"; // Tile displayed as text on black background. Filled by arguments.
+		iconPicture = "\A3\ui_f\data\map\markers\military\warning_ca.paa"; // Small icon displayed in left part. Colored by "color", filled by arguments.
+		iconText = ""; // Short text displayed over the icon. Colored by "color", filled by arguments.
+		description = "%2"; // Brief description displayed as structured text. Colored by "color", filled by arguments.
+		color[] = {0,0.7,1,1}; // Icon and text color
+		duration = 8; // How many seconds will the notification be displayed
+		priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
+		difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
+	};
+
+	class Reward
+	{
+		title = "%1";
+		iconPicture = "\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa";
+		description = "%2";
+		color[] = {1,1,0.3,1};
+		sound = "";
+		duration = 5;
+		priority = 0;
+	};
+};
+
+class CfgDebriefing
+{
+	class End1
+	{
+		title = "Success";
+		subtitle = "Mission Complete";
+		description = "You Made It Through 30 Rounds!";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0.0,0.0,0.0,1};
+	};
+};

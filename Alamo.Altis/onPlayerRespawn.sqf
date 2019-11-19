@@ -1,0 +1,10 @@
+[player, [missionNamespace, "inventory_var"]] call BIS_fnc_loadInventory;
+player enableFatigue false;
+player setCaptive false;
+player allowDamage true;
+player setCustomAimCoef 1;
+player setAnimSpeedCoef 1;
+player setVariable ["aimingPerk", false, false];
+player setVariable ["revivePerk", false, false];
+player setVariable ["staminaPerk", false, false];
+player setVariable ["strongPerk", false, false];
