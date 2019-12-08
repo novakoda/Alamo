@@ -42,8 +42,8 @@ class Params{
   default= 1; };
 
   class mods {
-  title = "Enemy Units from Mods";
-  texts[]= {"None","RHS (Russian)"};
-  values[]= {0,1};
+  title = "Enemy Units & Vehicles";
+  texts[]= {"AAF","CSAT","NATO","FIA","Syndikat"};
+  values[]= {0,1,2,3,4};
   default= 0; };
 };
