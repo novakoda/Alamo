@@ -55,7 +55,7 @@ sleep 1;
 
 incomingEnemy = false;
 publicVariable "incomingEnemy";
-sleep 5;
 { deleteVehicle _x } forEach allDead;
-sleep 6;
+
+sleep timeAfter;
 null=[true] execVM "waves.sqf";

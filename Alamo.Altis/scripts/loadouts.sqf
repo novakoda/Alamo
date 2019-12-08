@@ -19,227 +19,267 @@ switch (_type) do
 {
 	case "arm0_Pistol" :
 	{
-		_currentUnit addWeapon "hgun_P07_F";
-		_currentUnit addPrimaryWeaponItem "16Rnd_9x21_Mag";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_BandollierB_rgr";
-		for "_i" from 1 to 10 do {_currentUnit addItemToVest "16Rnd_9x21_Mag";};
-		_currentUnit addHeadgear "H_Booniehat_dgtl";
-
+		_gun = selectRandom pistol;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest0;
+		for "_i" from 1 to 10 do {_currentUnit addItemToVest _gunMag;};
+		_currentUnit addHeadgear selectRandom hats;
 	};
-	case "arm0_Basic" :
+	case "arm0_SMG" :
 	{
-		_currentUnit addWeapon "SMG_02_F";
-		_currentUnit addPrimaryWeaponItem "30Rnd_9x21_Mag_SMG_02";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_BandollierB_rgr";
-		for "_i" from 1 to 6 do {_currentUnit addItemToVest "30Rnd_9x21_Mag_SMG_02";};
-		_currentUnit addHeadgear "H_Booniehat_dgtl";
+		_gun = selectRandom smg;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest0;
+		for "_i" from 1 to 10 do {_currentUnit addItemToVest _gunMag;};
+		_currentUnit addHeadgear selectRandom hats;
 	};
 	case "arm0_Rifle" :
 	{
-		_currentUnit addWeapon "arifle_Mk20C_F";
-		_currentUnit addPrimaryWeaponItem "optic_ACO_grn_smg";
-		_currentUnit addPrimaryWeaponItem "30Rnd_556x45_Stanag";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_BandollierB_rgr";
-		for "_i" from 1 to 7 do {_currentUnit addItemToVest "30Rnd_556x45_Stanag";};
-		_currentUnit addHeadgear "H_Booniehat_dgtl";
+		_gun = selectRandom rifle;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest0;
+		for "_i" from 1 to 10 do {_currentUnit addItemToVest _gunMag;};
+		_currentUnit addHeadgear selectRandom hats;
 	};
 	case "arm0_GL" :
 	{
-		_currentUnit addWeapon "arifle_Mk20_GL_F";
-		_currentUnit addPrimaryWeaponItem "optic_ACO_grn_smg";
-		_currentUnit addPrimaryWeaponItem "30Rnd_556x45_Stanag";
-		_currentUnit addPrimaryWeaponItem "1Rnd_HE_Grenade_shell";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_BandollierB_rgr";
-		_currentUnit addItemToUniform "1Rnd_HE_Grenade_shell";
-		for "_i" from 1 to 5 do {_currentUnit addItemToVest "30Rnd_556x45_Stanag";};
-		for "_i" from 1 to 4 do {_currentUnit addItemToVest "1Rnd_HE_Grenade_shell";};
-		_currentUnit addHeadgear "H_Booniehat_dgtl";
+		_gun = selectRandom gl;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_gl = (getArray (configFile >> "CfgWeapons" >> _gun >> "muzzles")) select 1;
+		_glMag = (getArray ( configFile >> "CfgWeapons" >> _gun >> _gl >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit addPrimaryWeaponItem _glMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest0;
+		_currentUnit addBackpack selectRandom backpacks;
+		for "_i" from 1 to 7 do {_currentUnit addItemToVest _gunMag;};
+		for "_i" from 1 to 5 do {_currentUnit addItemToBackpack _glMag;};
+		_currentUnit addHeadgear selectRandom hats;
+
 	};
 	case "arm0_MG" :
 	{
-		_currentUnit addWeapon "LMG_Mk200_F";
-		_currentUnit addPrimaryWeaponItem "200Rnd_65x39_cased_Box";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_BandollierB_rgr";
-		_currentUnit addItemToVest "200Rnd_65x39_cased_Box";
-		_currentUnit addHeadgear "H_Booniehat_dgtl";
+		_gun = selectRandom mg;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest0;
+		for "_i" from 1 to 10 do {_currentUnit addItemToVest _gunMag;};
+		_currentUnit addHeadgear selectRandom hats;
 	};
 	case "arm0_AT" :
 	{
-		_currentUnit addWeapon "arifle_Mk20C_F";
-		_currentUnit addPrimaryWeaponItem "optic_ACO_grn_smg";
-		_currentUnit addPrimaryWeaponItem "30Rnd_556x45_Stanag";
-		_currentUnit addWeapon "launch_NLAW_F";
-		_currentUnit addSecondaryWeaponItem "NLAW_F";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_BandollierB_rgr";
-		_currentUnit addBackpack " I_Fieldpack_oli";
-		for "_i" from 1 to 7 do {_currentUnit addItemToVest "30Rnd_556x45_Stanag";};
-		for "_i" from 1 to 2 do {_currentUnit addItemToBackpack "NLAW_F";};
-		_currentUnit addHeadgear "H_Booniehat_dgtl";
+		_gun = selectRandom rifle;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_launcher = selectRandom at;
+		_launcherMag = ( getArray ( configFile >> "CfgWeapons" >> _launcher >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit addWeapon _launcher;
+		_currentUnit addSecondaryWeaponItem _launcherMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest0;
+		_currentUnit addBackpack selectRandom backpacks;
+		for "_i" from 1 to 7 do {_currentUnit addItemToVest _gunMag;};
+		for "_i" from 1 to 2 do {_currentUnit addItemToBackpack _launcherMag;};
+		_currentUnit addHeadgear selectRandom hats;
 	};
 	case "arm1_Rifle" :
 	{
-		_currentUnit addWeapon "arifle_Mk20C_F";
-		_currentUnit addPrimaryWeaponItem "optic_ACO_grn_smg";
-		_currentUnit addPrimaryWeaponItem "30Rnd_556x45_Stanag";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_TacVest_oli";
-		for "_i" from 1 to 7 do {_currentUnit addItemToVest "30Rnd_556x45_Stanag";};
-		_currentUnit addHeadgear "H_HelmetIA";
+		_gun = selectRandom rifle;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest1;
+		for "_i" from 1 to 10 do {_currentUnit addItemToVest _gunMag;};
+		_currentUnit addHeadgear selectRandom helm;
 	};
 	case "arm1_GL" :
 	{
-		_currentUnit addWeapon "arifle_Mk20_GL_F";
-		_currentUnit addPrimaryWeaponItem "optic_ACO_grn_smg";
-		_currentUnit addPrimaryWeaponItem "30Rnd_556x45_Stanag";
-		_currentUnit addPrimaryWeaponItem "1Rnd_HE_Grenade_shell";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_TacVest_oli";
-		_currentUnit addItemToUniform "1Rnd_HE_Grenade_shell";
-		for "_i" from 1 to 5 do {_currentUnit addItemToVest "30Rnd_556x45_Stanag";};
-		for "_i" from 1 to 4 do {_currentUnit addItemToVest "1Rnd_HE_Grenade_shell";};
-		_currentUnit addHeadgear "H_HelmetIA";
+		_gun = selectRandom gl;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_gl = (getArray (configFile >> "CfgWeapons" >> _gun >> "muzzles")) select 1;
+		_glMag = (getArray ( configFile >> "CfgWeapons" >> _gun >> _gl >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit addPrimaryWeaponItem _glMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest1;
+		_currentUnit addBackpack selectRandom backpacks;
+		for "_i" from 1 to 7 do {_currentUnit addItemToVest _gunMag;};
+		for "_i" from 1 to 5 do {_currentUnit addItemToBackpack _glMag;};
+		_currentUnit addHeadgear selectRandom helm;
+
 	};
 	case "arm1_MG" :
 	{
-		_currentUnit addWeapon "LMG_Mk200_F";
-		_currentUnit addPrimaryWeaponItem "200Rnd_65x39_cased_Box";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_TacVest_oli";
-		_currentUnit addItemToVest "200Rnd_65x39_cased_Box";
-		_currentUnit addHeadgear "H_HelmetIA";
+		_gun = selectRandom mg;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest1;
+		for "_i" from 1 to 10 do {_currentUnit addItemToVest _gunMag;};
+		_currentUnit addHeadgear selectRandom helm;
 	};
 	case "arm1_AT" :
 	{
-		_currentUnit addWeapon "arifle_Mk20C_F";
-		_currentUnit addPrimaryWeaponItem "optic_ACO_grn_smg";
-		_currentUnit addPrimaryWeaponItem "30Rnd_556x45_Stanag";
-		_currentUnit addWeapon "launch_NLAW_F";
-		_currentUnit addSecondaryWeaponItem "NLAW_F";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_TacVest_oli";
-		_currentUnit addBackpack " I_Fieldpack_oli";
-		for "_i" from 1 to 7 do {_currentUnit addItemToVest "30Rnd_556x45_Stanag";};
-		for "_i" from 1 to 2 do {_currentUnit addItemToBackpack "NLAW_F";};
-		_currentUnit addHeadgear "H_HelmetIA";
+		_gun = selectRandom rifle;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_launcher = selectRandom at;
+		_launcherMag = ( getArray ( configFile >> "CfgWeapons" >> _launcher >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit addWeapon _launcher;
+		_currentUnit addSecondaryWeaponItem _launcherMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest1;
+		_currentUnit addBackpack selectRandom backpacks;
+		for "_i" from 1 to 7 do {_currentUnit addItemToVest _gunMag;};
+		for "_i" from 1 to 2 do {_currentUnit addItemToBackpack _launcherMag;};
+		_currentUnit addHeadgear selectRandom helm;
 	};
 	case "arm2_Rifle" :
 	{
-		_currentUnit addWeapon "arifle_Mk20C_F";
-		_currentUnit addPrimaryWeaponItem "optic_ACO_grn_smg";
-		_currentUnit addPrimaryWeaponItem "30Rnd_556x45_Stanag";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_PlateCarrierIA1_dgtl";
-		for "_i" from 1 to 7 do {_currentUnit addItemToVest "30Rnd_556x45_Stanag";};
-		_currentUnit addHeadgear "H_HelmetIA";
+		_gun = selectRandom rifle;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest2;
+		for "_i" from 1 to 10 do {_currentUnit addItemToVest _gunMag;};
+		_currentUnit addHeadgear selectRandom helm;
 	};
 	case "arm2_GL" :
 	{
-		_currentUnit addWeapon "arifle_Mk20_GL_F";
-		_currentUnit addPrimaryWeaponItem "optic_ACO_grn_smg";
-		_currentUnit addPrimaryWeaponItem "30Rnd_556x45_Stanag";
-		_currentUnit addPrimaryWeaponItem "1Rnd_HE_Grenade_shell";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_PlateCarrierIA1_dgtl";
-		_currentUnit addItemToUniform "1Rnd_HE_Grenade_shell";
-		for "_i" from 1 to 5 do {_currentUnit addItemToVest "30Rnd_556x45_Stanag";};
-		for "_i" from 1 to 4 do {_currentUnit addItemToVest "1Rnd_HE_Grenade_shell";};
-		_currentUnit addHeadgear "H_HelmetIA";
+		_gun = selectRandom gl;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_gl = (getArray (configFile >> "CfgWeapons" >> _gun >> "muzzles")) select 1;
+		_glMag = (getArray ( configFile >> "CfgWeapons" >> _gun >> _gl >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit addPrimaryWeaponItem _glMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest2;
+		_currentUnit addBackpack selectRandom backpacks;
+		for "_i" from 1 to 7 do {_currentUnit addItemToVest _gunMag;};
+		for "_i" from 1 to 5 do {_currentUnit addItemToBackpack _glMag;};
+		_currentUnit addHeadgear selectRandom helm;
+
 	};
 	case "arm2_MG" :
 	{
-		_currentUnit addWeapon "LMG_Mk200_F";
-		_currentUnit addPrimaryWeaponItem "200Rnd_65x39_cased_Box";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_PlateCarrierIA1_dgtl";
-		_currentUnit addItemToVest "200Rnd_65x39_cased_Box";
-		_currentUnit addHeadgear "H_HelmetIA";
+		_gun = selectRandom mg;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest2;
+		for "_i" from 1 to 10 do {_currentUnit addItemToVest _gunMag;};
+		_currentUnit addHeadgear selectRandom helm;
 	};
 	case "arm2_AT" :
 	{
-		_currentUnit addWeapon "arifle_Mk20C_F";
-		_currentUnit addPrimaryWeaponItem "optic_ACO_grn_smg";
-		_currentUnit addPrimaryWeaponItem "30Rnd_556x45_Stanag";
-		_currentUnit addWeapon "launch_NLAW_F";
-		_currentUnit addSecondaryWeaponItem "NLAW_F";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_PlateCarrierIA1_dgtl";
-		_currentUnit addBackpack " I_Fieldpack_oli";
-		for "_i" from 1 to 7 do {_currentUnit addItemToVest "30Rnd_556x45_Stanag";};
-		for "_i" from 1 to 2 do {_currentUnit addItemToBackpack "NLAW_F";};
-		_currentUnit addHeadgear "H_HelmetIA";
+		_gun = selectRandom rifle;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_launcher = selectRandom at;
+		_launcherMag = ( getArray ( configFile >> "CfgWeapons" >> _launcher >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit addWeapon _launcher;
+		_currentUnit addSecondaryWeaponItem _launcherMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest2;
+		_currentUnit addBackpack selectRandom backpacks;
+		for "_i" from 1 to 7 do {_currentUnit addItemToVest _gunMag;};
+		for "_i" from 1 to 2 do {_currentUnit addItemToBackpack _launcherMag;};
+		_currentUnit addHeadgear selectRandom helm;
 	};
 	case "arm3_Rifle" :
 	{
-		_currentUnit addWeapon "arifle_Mk20C_F";
-		_currentUnit addPrimaryWeaponItem "optic_ACO_grn_smg";
-		_currentUnit addPrimaryWeaponItem "30Rnd_556x45_Stanag";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_PlateCarrierIAGL_dgtl";
-		for "_i" from 1 to 7 do {_currentUnit addItemToVest "30Rnd_556x45_Stanag";};
-		_currentUnit addHeadgear "H_HelmetIA";
-		_currentUnit addGoggles "G_Balaclava_oli";
+		_gun = selectRandom rifle;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest3;
+		for "_i" from 1 to 10 do {_currentUnit addItemToVest _gunMag;};
+		_currentUnit addHeadgear selectRandom helm;
+		_currentUnit addGoggles selectRandom masks;
 	};
 	case "arm3_GL" :
 	{
-		_currentUnit addWeapon "arifle_Mk20_GL_F";
-		_currentUnit addPrimaryWeaponItem "optic_ACO_grn_smg";
-		_currentUnit addPrimaryWeaponItem "30Rnd_556x45_Stanag";
-		_currentUnit addPrimaryWeaponItem "1Rnd_HE_Grenade_shell";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_PlateCarrierIAGL_dgtl";
-		_currentUnit addItemToUniform "1Rnd_HE_Grenade_shell";
-		for "_i" from 1 to 5 do {_currentUnit addItemToVest "30Rnd_556x45_Stanag";};
-		for "_i" from 1 to 4 do {_currentUnit addItemToVest "1Rnd_HE_Grenade_shell";};
-		_currentUnit addHeadgear "H_HelmetIA";
-		_currentUnit addGoggles "G_Balaclava_oli";
+		_gun = selectRandom gl;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_gl = (getArray (configFile >> "CfgWeapons" >> _gun >> "muzzles")) select 1;
+		_glMag = (getArray ( configFile >> "CfgWeapons" >> _gun >> _gl >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit addPrimaryWeaponItem _glMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest3;
+		_currentUnit addBackpack selectRandom backpacks;
+		for "_i" from 1 to 7 do {_currentUnit addItemToVest _gunMag;};
+		for "_i" from 1 to 5 do {_currentUnit addItemToBackpack _glMag;};
+		_currentUnit addHeadgear selectRandom helm;
+		_currentUnit addGoggles selectRandom masks;
+
 	};
 	case "arm3_MG" :
 	{
-		_currentUnit addWeapon "LMG_Mk200_F";
-		_currentUnit addPrimaryWeaponItem "200Rnd_65x39_cased_Box";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_PlateCarrierIAGL_dgtl";
-		_currentUnit addItemToVest "200Rnd_65x39_cased_Box";
-		_currentUnit addHeadgear "H_HelmetIA";
-		_currentUnit addGoggles "G_Balaclava_oli";
+		_gun = selectRandom mg;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest3;
+		for "_i" from 1 to 10 do {_currentUnit addItemToVest _gunMag;};
+		_currentUnit addHeadgear selectRandom helm;
+		_currentUnit addGoggles selectRandom masks;
 	};
 	case "arm3_AT" :
 	{
-		_currentUnit addWeapon "arifle_Mk20C_F";
-
-		_currentUnit addPrimaryWeaponItem "optic_ACO_grn_smg";
-		_currentUnit addPrimaryWeaponItem "30Rnd_556x45_Stanag";
-		_currentUnit addWeapon "launch_NLAW_F";
-		_currentUnit addSecondaryWeaponItem "NLAW_F";
-		_currentUnit forceAddUniform "U_I_CombatUniform_shortsleeve";
-		_currentUnit addVest "V_PlateCarrierIAGL_dgtl";
-		_currentUnit addBackpack " I_Fieldpack_oli";
-		for "_i" from 1 to 7 do {_currentUnit addItemToVest "30Rnd_556x45_Stanag";};
-		for "_i" from 1 to 2 do {_currentUnit addItemToBackpack "NLAW_F";};
-		_currentUnit addHeadgear "H_HelmetIA";
-		_currentUnit addGoggles "G_Balaclava_oli";
+		_gun = selectRandom rifle;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_launcher = selectRandom at;
+		_launcherMag = ( getArray ( configFile >> "CfgWeapons" >> _launcher >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit addWeapon _launcher;
+		_currentUnit addSecondaryWeaponItem _launcherMag;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest3;
+		_currentUnit addBackpack selectRandom backpacks;
+		for "_i" from 1 to 7 do {_currentUnit addItemToVest _gunMag;};
+		for "_i" from 1 to 2 do {_currentUnit addItemToBackpack _launcherMag;};
+		_currentUnit addHeadgear selectRandom helm;
+		_currentUnit addGoggles selectRandom masks;
 	};
 	case "Sniper" :
 	{
-
-		_currentUnit addWeapon "srifle_EBR_F";
-		_currentUnit addPrimaryWeaponItem "optic_DMS";
-		_currentUnit addPrimaryWeaponItem "20Rnd_762x51_Mag";
-		_currentUnit addPrimaryWeaponItem "bipod_03_F_blk";
-		_currentUnit forceAddUniform "U_I_CombatUniform";
-		_currentUnit addVest "V_Chestrig_oli";
+		_gun = selectRandom dmr;
+		_gunMag = ( getArray ( configFile >> "CfgWeapons" >> _gun >> "magazines" )) select 0 ;
+		_currentUnit addWeapon _gun;
+		_currentUnit addPrimaryWeaponItem _gunMag;
+		_currentUnit addPrimaryWeaponItem selectRandom sniperOptic;
+		_currentUnit forceAddUniform selectRandom uniforms;
+		_currentUnit addVest selectRandom vest0;
+		for "_i" from 1 to 10 do {_currentUnit addItemToVest _gunMag;};
+		_currentUnit addHeadgear selectRandom hats;
 		_currentUnit addItemToUniform "FirstAidKit";
-		_currentUnit addItemToUniform "20Rnd_762x51_Mag";
-		_currentUnit addItemToUniform "Chemlight_green";
-		for "_i" from 1 to 11 do {_currentUnit addItemToVest "20Rnd_762x51_Mag";};
-		_currentUnit addItemToVest "Chemlight_green";
-		_currentUnit addHeadgear "H_MilCap_dgtl";
+		_currentUnit addItemToUniform "FirstAidKit";
 	};
 };
 

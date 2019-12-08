@@ -1,5 +1,6 @@
 [] execVM "scripts\manual.sqf";
 [] execVM "prices.sqf";
+[] execVM "classNames.sqf";
 
 if (local player) then {
   player enableFatigue false; player setCustomAimCoef 1;
@@ -13,6 +14,9 @@ if (isNil "waveLvl") then
 	waveLvl = (paramsArray select 5) - 1;
   publicVariable "waveLvl";
 };
+
+timeAfter = (paramsArray select 6);
+publicVariable "waveLvl";
 
 playerNum = playersNumber west;
 publicVariable "playerNum";

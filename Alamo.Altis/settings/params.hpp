@@ -34,4 +34,16 @@ class Params{
   texts[]= {"1 (Default)","5","10","15","20","25","30"};
   values[]= {1,5,10,15,20,25,30};
   default= 1; };
+
+  class BetweenTime {
+  title = "Time Between Waves";
+  texts[]= {"None","5 seconds","10 seconds (Default)","20 seconds","30 seconds", "1 minute", "2 minutes", "3 minutes"};
+  values[]= {0,5,10,20,30,60,120,180};
+  default= 1; };
+
+  class mods {
+  title = "Enemy Units from Mods";
+  texts[]= {"None","RHS (Russian)"};
+  values[]= {0,1};
+  default= 0; };
 };

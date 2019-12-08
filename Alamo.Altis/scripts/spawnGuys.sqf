@@ -1,5 +1,5 @@
 start1_loadouts = ["arm0_Pistol"];
-start2_loadouts = [ "arm0_Basic"];
+start2_loadouts = [ "arm0_SMG"];
 lvl0_loadouts = ["arm0_Rifle", "arm0_GL", "arm0_MG", "arm0_AT"];
 lvl1_loadouts = ["arm1_AT", "arm1_Rifle", "arm1_GL", "arm1_MG"];
 lvl2_loadouts = ["arm2_AT", "arm2_Rifle", "arm2_GL", "arm2_MG"];
