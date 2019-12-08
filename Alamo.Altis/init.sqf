@@ -21,11 +21,7 @@ publicVariable "waveLvl";
 playerNum = playersNumber west;
 publicVariable "playerNum";
 
-offroads = "I_G_Offroad_01_armed_F";
-mraps = "I_MRAP_03_hmg_F";
-wheeled = "I_APC_Wheeled_03_cannon_F";
-tracked = "I_APC_tracked_03_cannon_F";
-tanks = "I_MBT_03_cannon_F";
+
 
 incomingEnemy = false;
 publicVariable "incomingEnemy";
@@ -42,6 +38,8 @@ noon = false;
 dusk = false;
 night = false;
 
+
+call compileFinal preprocessFileLineNumbers "functions\lmo_loadouts.sqf";
 call compileFinal preprocessFileLineNumbers "functions\lmo_global.sqf";
 call compileFinal preprocessFileLineNumbers "functions\lmo_spawn.sqf";
 call compileFinal preprocessFileLineNumbers "functions\lmo_veh.sqf";

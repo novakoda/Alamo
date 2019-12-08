@@ -31,7 +31,7 @@ lmo_vehSlot = {
 	vehSpawnList = vehSpawnList - [_posVEH];
 	_VEHgrp = createGroup resistance;
 	_VEHdir = _posVEH getRelDir attackPos;
-	_VEH = [getPos _posVEH, _VEHdir, _carClass, _VEHgrp] call bis_fnc_spawnvehicle;
+	_VEH = [getPos _posVEH, _VEHdir, selectRandom _carClass, _VEHgrp] call bis_fnc_spawnvehicle;
 	{[_x, selectRandom spawnGuys] execVM "scripts\loadouts.sqf";} forEach units _VEHgrp;
 	_VEHgrp deleteGroupWhenEmpty true;
 	[_VEHgrp,_posVEH] execVM 'scripts\spawnVEH.sqf';
