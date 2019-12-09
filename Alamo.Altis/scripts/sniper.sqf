@@ -16,7 +16,7 @@ while {_sniperNum >= 1 && count _posList > 0} do {
 	_pos = selectRandom _posList;
 	_posList = _posList - [_pos];
 	_dir = _pos getRelDir attackPos;
-	"I_Soldier_M_F" createUnit [getPosASL _pos, _group, "this setDir _dir; [this, 'Sniper'] execVM 'scripts\loadouts.sqf'; this disableAI 'PATH'; this setPosASL [getPosASL _pos select 0, (getPosASL _pos select 1), getPosASL _pos select 2];", 0.5, "corporal"];
+	"I_Soldier_M_F" createUnit [getPosASL _pos, _group, "this setDir _dir; [this, 'Sniper'] execVM 'scripts\loadouts.sqf'; this disableAI 'PATH'; this setUnitPos 'UP'; this setPosASL [getPosASL _pos select 0, (getPosASL _pos select 1), getPosASL _pos select 2];", 0.5, "corporal"];
 	_sniperNum = _sniperNum-1;
 };
 
