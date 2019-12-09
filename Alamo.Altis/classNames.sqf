@@ -161,6 +161,38 @@ switch (_mod) do {
   tracked = ["I_APC_tracked_03_cannon_F"];
   tanks = ["I_MBT_03_cannon_F"];
   };
+  case (5): {
+  // RHS (Russian)
+      uniforms = ["rhs_uniform_vmf_flora"];
+      masks = ["rhs_scarf", "rhs_balaclava", "rhs_balaclava1_olive"];
+
+      vest0 = ["rhs_6sh92", "rhs_6sh92_headset", "rhs_6sh92_radio"];
+      vest1 = ["V_TacVest_oli"];
+      vest2 =["rhs_6b23_rifleman", "rhs_6b23_engineer"];
+      vest3 = ["rhs_6b13_Flora_6sh92", "rhs_6b13_Flora_6sh92_radio"];
+
+      hats = ["rhs_Booniehat_flora", "rhs_beanie_green", "rhs_fieldcap_vsr"];
+      helm = ["rhs_6b7_1m", "rhs_6b26", "rhs_6b26_ess", "rhs_6b26_green", "rhs_6b26_ess_green"];
+
+      backpacks = ["rhs_assault_umbts","rhs_sidor"];
+
+      // weapons
+      pistol = ["rhs_weap_makarov_pm"];
+      smg = ["rhs_weap_pp2000"];
+      rifle = ["rhs_weap_ak74m", "rhs_weap_ak103", "rhs_weap_ak105", "rhs_weap_ak74_2", "rhs_weap_ak74_3", "rhs_weap_akm", "rhs_weap_akmn", "rhs_weap_akms", "rhs_weap_aks74u", "rhs_weap_asval"];
+      gl = ["rhs_weap_ak103_gp25", "rhs_weap_akm_gp25", "rhs_weap_ak74_gp25", "rhs_weap_ak74m_gp25", "rhs_weap_ak74m_fullplum_gp25"];
+      mg = ["rhs_weap_pkm", "rhs_weap_pkp"];
+      at = ["rhs_weap_rpg26", "rhs_weap_rpg7"];
+      dmr = ["rhs_weap_svdp"];
+      sniperOptic = ["rhs_acc_pso1m21"];
+
+      // vehicles
+      offroads =[ "RHS_Ural_Zu23_VMF_01", "rhs_gaz66_zu23_vmf"];
+      mraps = ["rhs_tigr_sts_vmf", "rhs_tigr_sts_3camo_vmf"];
+      wheeled = ["rhs_btr60_vmf", "rhs_btr80a_vmf"];
+      tracked = ["rhs_brm1k_vmf", "rhs_bmp2d_vmf", "rhs_bmp1p_vmf"];
+      tanks = ["rhs_t90saa_tv", "rhs_t80a", "rhs_t14_tv"];
+  };
 };
 
 
