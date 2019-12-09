@@ -41,8 +41,8 @@ class Params{
   values[]= {0,5,10,20,30,60,120,180};
   default= 1; };
 
-  class mods {
-  title = "Enemy Units & Vehicles";
+  class Faction {
+  title = "Enemy Units & Vehicle Faction";
   texts[]= {"AAF","CSAT","NATO","FIA","Syndikat","RHS (Russian)"};
   values[]= {0,1,2,3,4,5};
   default= 0; };

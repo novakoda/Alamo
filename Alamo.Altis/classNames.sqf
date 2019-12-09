@@ -1,6 +1,6 @@
-_mod = paramsArray select 2
+_faction = paramsArray select 7;
 
-switch (_mod) do {
+switch (_faction) do {
   case (0): {
   // AAF
       uniforms = ["U_I_CombatUniform_shortsleeve", "U_I_CombatUniform", "U_I_OfficerUniform"];
