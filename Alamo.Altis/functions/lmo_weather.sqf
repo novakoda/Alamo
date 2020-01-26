@@ -1,21 +1,23 @@
 lmo_rain = {
-	params [ "_waveLvl", "_rainChange"];
+	params [ "_waveLvl", "_weatherChange"];
 	if (_waveLvl % _weatherChange == 0) then {
 		if (!raining) then {
 			15 setOvercast 1; 15 setRain 1; forceWeatherChange;
 			"RainAlert" remoteExec ["BIS_fnc_showNotification"];
 			raining = true;
+			publicVariable "raining";
 		} else {
 			15 setOvercast 0.1; 15 setRain 0; forceWeatherChange;
 			"RainOverAlert" remoteExec ["BIS_fnc_showNotification"];
 			raining = false;
+			publicVariable "raining";
 		}
 	}
 };
 
 lmo_time = {
-	params [ "_waveLvl", "_rainChange"];
-	if (_waveLvl % _weatherChange == 0) then {
+	params [ "_waveLvl", "_timeChange"];
+	if (_waveLvl % _timeChange == 0) then {
 		if (dawn) then {
 			"NightOverAlert" remoteExec ["BIS_fnc_showNotification"];
 			dawn = false;

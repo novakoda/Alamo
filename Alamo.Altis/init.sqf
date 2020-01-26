@@ -22,7 +22,6 @@ playerNum = playersNumber west;
 publicVariable "playerNum";
 
 
-
 incomingEnemy = false;
 publicVariable "incomingEnemy";
 
@@ -47,7 +46,6 @@ call compileFinal preprocessFileLineNumbers "functions\lmo_heli.sqf";
 call compileFinal preprocessFileLineNumbers "functions\lmo_commMenu.sqf";
 call compileFinal preprocessFileLineNumbers "functions\lmo_weather.sqf";
 call compileFinal preprocessFileLineNumbers "functions\lmo_perk.sqf";
-
 
 
 waitUntil {player == player && time > 1};

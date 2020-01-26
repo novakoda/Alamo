@@ -17,8 +17,8 @@ class Params{
   values[]= {.25,.5,.75,1,1.5,2,3};
   default= 1; };
 
-  class Weather {
-  title = "Weather Changes";
+  class Timing {
+  title = "Time Changes";
   texts[]= {"Every Level","Every 2 Levels","Every 3 Levels (Default)","Every 5 Levels","Every 10 Levels","Never"};
   values[]= {1,2,3,5,10,0};
   default= 3; };
@@ -39,11 +39,11 @@ class Params{
   title = "Time Between Waves";
   texts[]= {"None","5 seconds","10 seconds (Default)","20 seconds","30 seconds", "1 minute", "2 minutes", "3 minutes"};
   values[]= {0,5,10,20,30,60,120,180};
-  default= 1; };
+  default= 10; };
 
   class Faction {
-  title = "Enemy Units & Vehicle Faction";
-  texts[]= {"AAF","CSAT","NATO","FIA","Syndikat","RHS (Russian)"};
-  values[]= {0,1,2,3,4,5};
+  title = "Enemy Units/Vehicle Faction";
+  values[]= {0,1,2,3,4,5,6};
+  texts[]= {"AAF (Default)","CSAT","NATO","FIA","Syndikat","RHS Russians (Requires RHS AFRF and GREF)", "Custom (Check Readme!)"};
   default= 0; };
 };
